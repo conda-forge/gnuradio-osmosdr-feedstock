@@ -10,7 +10,7 @@ source:
   sha256: 9812429d97bc54f0a8917b880ca9e7e2421c66aeaac8ce5608161a8ae7007122
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
@@ -25,15 +25,19 @@ requirements:
   host:
     - boost-cpp
     - gnuradio-core
+    - gnuradio-uhd
     - pip  # [win]
     - python
+    - rtl-sdr
     - soapysdr
     - swig
+    - uhd
     - volk
     # pulled in by gnuradio-core and linked against, so include explicitly
     - log4cpp
   run:
     - boost-cpp
+    - {{ pin_compatible('gnuradio-uhd', max_pin='x.x.x') }}
     - python
     # pulled in by gnuradio-core and linked against, so include explicitly
     - log4cpp

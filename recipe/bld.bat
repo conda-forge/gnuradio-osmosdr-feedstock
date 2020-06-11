@@ -34,10 +34,10 @@ cmake -G "Ninja" ^
     -DENABLE_PYTHON=ON ^
     -DENABLE_REDPITAYA=OFF ^
     -DENABLE_RFSPACE=OFF ^
-    -DENABLE_RTL=OFF ^
-    -DENABLE_RTL_TCP=OFF ^
+    -DENABLE_RTL=ON ^
+    -DENABLE_RTL_TCP=ON ^
     -DENABLE_SOAPY=ON ^
-    -DENABLE_UHD=OFF ^
+    -DENABLE_UHD=ON ^
     ..
 if errorlevel 1 exit 1
 
