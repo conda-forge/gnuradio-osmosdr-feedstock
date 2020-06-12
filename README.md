@@ -9,9 +9,10 @@ Feedstock license: BSD 3-Clause
 
 Summary: osmocom GNU Radio blocks
 
-This package provides a minimal build of the osmocom GNU Radio blocks, supporting
-only the SoapySDR plugin. Support for a variety of SDR hardware can be achieved by
-using the appropriate module for SoapySDR.
+While primarily being developed for the OsmoSDR hardware, this package also
+supports a variety of hardware receivers through direct plugins and the SoapySDR
+plugin. If a direct plugin is not available in this build, you might be able to get
+support by installing the appropriate module for SoapySDR.
 
 
 Current build status
