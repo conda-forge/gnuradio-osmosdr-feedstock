@@ -10,7 +10,7 @@ source:
   sha256: 9812429d97bc54f0a8917b880ca9e7e2421c66aeaac8ce5608161a8ae7007122
 
 build:
-  number: 1
+  number: 2
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
