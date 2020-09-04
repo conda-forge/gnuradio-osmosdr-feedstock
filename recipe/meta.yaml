@@ -1,5 +1,5 @@
 {% set name = "gnuradio-osmosdr" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/osmocom/gr-osmosdr/archive/v{{ version }}.tar.gz
-  sha256: 9812429d97bc54f0a8917b880ca9e7e2421c66aeaac8ce5608161a8ae7007122
+  sha256: 5a7ce7afee38a56191b5d16cb4a91c92476729ff16ed09cbba5a3851ac619713
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
@@ -74,7 +74,7 @@ about:
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: COPYING
-  summary: 'osmocom GNU Radio blocks'
+  summary: osmocom GNU Radio blocks
   description: |
     While primarily being developed for the OsmoSDR hardware, this package also
     supports a variety of hardware receivers through direct plugins and the SoapySDR
