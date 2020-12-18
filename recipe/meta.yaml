@@ -1,5 +1,5 @@
 {% set name = "gnuradio-osmosdr" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/osmocom/gr-osmosdr/archive/v{{ version }}.tar.gz
-  sha256: 5a7ce7afee38a56191b5d16cb4a91c92476729ff16ed09cbba5a3851ac619713
+  sha256: 11b1eb13725ced5ded9121a10aaf7bccf2430c5c69d020791408219968665b71
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
