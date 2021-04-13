@@ -10,9 +10,10 @@ source:
   sha256: 11b1eb13725ced5ded9121a10aaf7bccf2430c5c69d020791408219968665b71
   patches:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
+    - 0002-Single-patch-to-v0.2.3-for-GR-3.9-compatibility.patch
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
@@ -23,16 +24,17 @@ requirements:
     - cmake
     - make  # [not win]
     - ninja  # [win]
+    - patch  # [osx]
     - pkg-config  # [not win]
   host:
     - boost-cpp
     - gnuradio-core
     - gnuradio-uhd
     - pip  # [win]
+    - pybind11
     - python
     - rtl-sdr
     - soapysdr
-    - swig
     - uhd
     - volk
   run:
@@ -48,7 +50,6 @@ test:
     - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux]
     - osmocom_fft --help  # [not linux]
     - osmocom_siggen_nogui --help
-    - osmocom_spectrum_sense --help
 
     # verify that (some) headers get installed
     - test -f $PREFIX/include/osmosdr/api.h  # [not win]
