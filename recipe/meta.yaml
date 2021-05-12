@@ -48,11 +48,11 @@ requirements:
 
 test:
   requires:
-    - gnuradio-qtgui
+    - gnuradio-qtgui  # [not (ppc64le or arm64)]
   commands:
     # verify that apps can run
-    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux]
-    - osmocom_fft --help  # [not linux]
+    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux and not ppc64le]
+    - osmocom_fft --help  # [not linux and not arm64]
     - osmocom_siggen_nogui --help
 
     # verify that (some) headers get installed
