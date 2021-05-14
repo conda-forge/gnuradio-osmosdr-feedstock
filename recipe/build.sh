@@ -30,6 +30,6 @@ cmake_config_args=(
     -DENABLE_UHD=ON
 )
 
-cmake ${CMAKE_ARGS} .. "${cmake_config_args[@]}" --trace-expand
+cmake ${CMAKE_ARGS} .. "${cmake_config_args[@]}"
 cmake --build . --config Release -- -j${CPU_COUNT}
 cmake --build . --config Release --target install
