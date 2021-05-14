@@ -28,9 +28,8 @@ cmake_config_args=(
     -DENABLE_RTL_TCP=ON
     -DENABLE_SOAPY=ON
     -DENABLE_UHD=ON
-    -DCMAKE_FIND_DEBUG_MODE=ON
 )
 
-cmake ${CMAKE_ARGS} .. "${cmake_config_args[@]}"
+cmake ${CMAKE_ARGS} .. "${cmake_config_args[@]}" --trace-expand
 cmake --build . --config Release -- -j${CPU_COUNT}
 cmake --build . --config Release --target install
