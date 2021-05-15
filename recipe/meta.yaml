@@ -26,6 +26,7 @@ requirements:
     - ninja  # [win]
     - patch  # [osx]
     - pkg-config  # [not win]
+    - thrift-compiler  # [not win]
     # cross-compilation requirements
     - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
