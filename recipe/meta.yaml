@@ -75,9 +75,9 @@ test:
     {% endfor %}
   imports:
     - osmosdr
-    - gnuradio.qtgui
     - PyQt5.Qt
     - sip
+    - gnuradio.qtgui
 
 about:
   home: https://osmocom.org/projects/gr-osmosdr/wiki
