@@ -26,7 +26,6 @@ requirements:
     - ninja  # [win]
     - patch  # [osx]
     - pkg-config  # [not win]
-    - thrift-compiler  # [not win]
     # cross-compilation requirements
     - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
@@ -53,8 +52,6 @@ test:
   requires:
     - gnuradio-qtgui  # [not (ppc64le or arm64)]
   commands:
-    - echo $LD_LIBRARY_PATH  # [linux]
-    - export LD_DEBUG=libs  # [linux]
     # verify that apps can run
     - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux and not ppc64le]
     - osmocom_fft --help  # [not linux and not arm64]
