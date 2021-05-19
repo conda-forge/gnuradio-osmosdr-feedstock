@@ -26,10 +26,16 @@ requirements:
     - ninja  # [win]
     - patch  # [osx]
     - pkg-config  # [not win]
+    # cross-compilation requirements
+    - python                              # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - numpy                               # [build_platform != target_platform]
+    - pybind11                            # [build_platform != target_platform]
   host:
     - boost-cpp
     - gnuradio-core
     - gnuradio-uhd
+    - numpy
     - pip  # [win]
     - pybind11
     - python
@@ -44,11 +50,11 @@ requirements:
 
 test:
   requires:
-    - gnuradio-qtgui
+    - gnuradio-qtgui  # [not (ppc64le or arm64)]
   commands:
     # verify that apps can run
-    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux]
-    - osmocom_fft --help  # [not linux]
+    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux and not ppc64le]
+    - osmocom_fft --help  # [not linux and not arm64]
     - osmocom_siggen_nogui --help
 
     # verify that (some) headers get installed

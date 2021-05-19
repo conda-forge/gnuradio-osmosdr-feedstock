@@ -10,6 +10,8 @@ cxx_compiler:
 - vs2017
 gnuradio_core:
 - 3.9.1
+numpy:
+- '1.19'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -17,7 +19,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.7.* *_cpython
+- 3.9.* *_cpython
 soapysdr:
 - '0.8'
 target_platform:
@@ -26,3 +28,6 @@ uhd:
 - 4.0.0
 volk:
 - '2.4'
+zip_keys:
+- - python
+  - numpy
