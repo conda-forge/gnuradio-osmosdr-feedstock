@@ -13,7 +13,7 @@ source:
     - 0002-Single-patch-to-v0.2.3-for-GR-3.9-compatibility.patch
 
 build:
-  number: 7
+  number: 8
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
