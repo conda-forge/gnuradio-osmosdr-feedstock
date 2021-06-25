@@ -27,7 +27,7 @@ target_platform:
 uhd:
 - 4.0.0
 volk:
-- '2.4'
+- '2.5'
 zip_keys:
 - - python
   - numpy
