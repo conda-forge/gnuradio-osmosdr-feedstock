@@ -25,4 +25,4 @@ target_platform:
 uhd:
 - 3.15.0
 volk:
-- '2.4'
+- '2.5'
