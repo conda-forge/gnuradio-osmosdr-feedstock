@@ -25,7 +25,7 @@ soapysdr:
 target_platform:
 - win-64
 uhd:
-- 4.0.0
+- 4.1.0
 volk:
 - '2.5'
 zip_keys:
