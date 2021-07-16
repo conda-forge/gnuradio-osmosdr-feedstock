@@ -1,4 +1,2 @@
 gnuradio_core:
   - 3.9.2
-uhd:
-  - 4.0.0
