@@ -12,7 +12,7 @@ source:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
 
 build:
-  number: 7
+  number: 8
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
