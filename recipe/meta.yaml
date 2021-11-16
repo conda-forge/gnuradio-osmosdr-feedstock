@@ -51,7 +51,7 @@ requirements:
 test:
   requires:
     - gnuradio-qtgui  # [not (ppc64le or arm64)]
-    - {{ cdt('libxrender') }}  # [linux and not ppc64le]
+    - xorg-libxrender  # [linux and not ppc64le]
   commands:
     # verify that apps can run
     - DISPLAY=localhost:1.0 QT_DEBUG_PLUGINS=1 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux and not ppc64le]
