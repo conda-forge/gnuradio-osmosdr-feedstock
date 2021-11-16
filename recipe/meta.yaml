@@ -54,7 +54,7 @@ test:
     - xorg-libxrender  # [linux and not ppc64le]
   commands:
     # verify that apps can run
-    - DISPLAY=localhost:1.0 QT_DEBUG_PLUGINS=1 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux and not ppc64le]
+    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux and not ppc64le]
     - osmocom_fft --help  # [not linux and not arm64]
     - osmocom_siggen_nogui --help
 
