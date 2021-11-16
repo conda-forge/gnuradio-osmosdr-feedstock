@@ -13,7 +13,7 @@ source:
     - 0002-Single-patch-to-v0.2.3-for-GR-3.9-compatibility.patch
 
 build:
-  number: 11
+  number: 12
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
@@ -51,6 +51,7 @@ requirements:
 test:
   requires:
     - gnuradio-qtgui  # [not (ppc64le or arm64)]
+    - xorg-libxrender  # [linux and not ppc64le]
   commands:
     # verify that apps can run
     - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'osmocom_fft --help'  # [linux and not ppc64le]
