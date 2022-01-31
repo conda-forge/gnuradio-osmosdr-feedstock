@@ -13,7 +13,7 @@ source:
     - 0002-Single-patch-to-v0.2.3-for-GR-3.9-compatibility.patch
 
 build:
-  number: 14
+  number: 15
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
@@ -33,13 +33,15 @@ requirements:
     - pybind11                            # [build_platform != target_platform]
   host:
     - boost-cpp
-    - gnuradio-core
+    - gnuradio-core  # [not gnuradio_extra_pin]
+    - gnuradio-core {{ gnuradio_extra_pin }}.*  # [gnuradio_extra_pin]
     - gnuradio-uhd
     - numpy
     - pip  # [win]
     - pybind11
     - python
     - rtl-sdr
+    - six
     - soapysdr
     - uhd
     - volk
