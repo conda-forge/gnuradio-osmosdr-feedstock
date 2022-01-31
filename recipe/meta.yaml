@@ -41,6 +41,7 @@ requirements:
     - pybind11
     - python
     - rtl-sdr
+    - six
     - soapysdr
     - uhd
     - volk
