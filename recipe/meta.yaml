@@ -11,6 +11,7 @@ source:
   patches:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
     - 0002-Single-patch-to-v0.2.3-for-GR-3.9-compatibility.patch
+    - 0003-Remove-use-of-removed-register-keyword.patch
 
 build:
   number: 16
