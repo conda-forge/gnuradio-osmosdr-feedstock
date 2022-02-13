@@ -12,7 +12,7 @@ source:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
 
 build:
-  number: 10
+  number: 11
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
@@ -28,6 +28,9 @@ requirements:
     - boost-cpp
     - gnuradio-core
     - gnuradio-uhd
+    - libairspy
+    - libairspyhf
+    - libhackrf
     - pip  # [win]
     - python
     - rtl-sdr
