@@ -28,6 +28,9 @@ requirements:
     - boost-cpp
     - gnuradio-core
     - gnuradio-uhd
+    - libairspy
+    - libairspyhf
+    - libhackrf
     - pip  # [win]
     - python
     - rtl-sdr
