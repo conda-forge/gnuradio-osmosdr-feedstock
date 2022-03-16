@@ -56,18 +56,6 @@ jobs:
         CONFIG: osx_64_gnuradio_extra_pinnumpy1.21python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         SHORT_CONFIG: osx_64_gnuradio_extra_pinnumpy1.21p_h40161402eb
-      osx_arm64_gnuradio_extra_pin3.8.5numpy1.19python3.8.____cpython:
-        CONFIG: osx_arm64_gnuradio_extra_pin3.8.5numpy1.19python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_arm64_gnuradio_extra_pin3.8.5nu_ha5a55c9778
-      osx_arm64_gnuradio_extra_pin3.8.5numpy1.19python3.9.____cpython:
-        CONFIG: osx_arm64_gnuradio_extra_pin3.8.5numpy1.19python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_arm64_gnuradio_extra_pin3.8.5nu_hdebb22efb8
-      osx_arm64_gnuradio_extra_pin3.8.5numpy1.21python3.10.____cpython:
-        CONFIG: osx_arm64_gnuradio_extra_pin3.8.5numpy1.21python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_arm64_gnuradio_extra_pin3.8.5nu_hfba507f8a9
       osx_arm64_gnuradio_extra_pin3.9.5numpy1.19python3.8.____cpython:
         CONFIG: osx_arm64_gnuradio_extra_pin3.9.5numpy1.19python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -92,7 +80,7 @@ jobs:
         CONFIG: osx_arm64_gnuradio_extra_pinnumpy1.21python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         SHORT_CONFIG: osx_arm64_gnuradio_extra_pinnumpy1._h84a6aaa9a3
-    maxParallel: 15
+    maxParallel: 16
   timeoutInMinutes: 360
 
   steps:
