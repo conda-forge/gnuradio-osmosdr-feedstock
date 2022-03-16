@@ -48,7 +48,8 @@ requirements:
     - six
     - soapysdr
     - swig  # [str(gnuradio_extra_pin).startswith("3.8")]
-    - uhd
+    - uhd  # [not str(gnuradio_extra_pin).startswith("3.8")]
+    - uhd 3.15.0.*  # [str(gnuradio_extra_pin).startswith("3.8")]
     - volk
   run:
     - boost-cpp
