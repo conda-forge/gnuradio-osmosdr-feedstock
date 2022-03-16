@@ -27,6 +27,7 @@ requirements:
     - ninja  # [win]
     - patch  # [osx]
     - pkg-config  # [not win]
+    - swig  # [str(gnuradio_extra_pin).startswith("3.8")]
     # cross-compilation requirements
     - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
@@ -47,7 +48,6 @@ requirements:
     - rtl-sdr
     - six
     - soapysdr
-    - swig  # [str(gnuradio_extra_pin).startswith("3.8")]
     - uhd  # [not str(gnuradio_extra_pin).startswith("3.8")]
     - uhd 3.15.0.*  # [str(gnuradio_extra_pin).startswith("3.8")]
     - volk
