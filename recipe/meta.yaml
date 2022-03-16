@@ -10,7 +10,7 @@ source:
   sha256: 11b1eb13725ced5ded9121a10aaf7bccf2430c5c69d020791408219968665b71
   patches:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
-    - 0002-Single-patch-to-v0.2.3-for-GR-3.9-compatibility.patch
+    - 0002-Single-patch-to-v0.2.3-for-GR-3.9-compatibility.patch  # [not str(gnuradio_extra_pin).startswith("3.8")]
     - 0003-Remove-use-of-removed-register-keyword.patch
 
 build:
@@ -31,7 +31,7 @@ requirements:
     - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - numpy                               # [build_platform != target_platform]
-    - pybind11                            # [build_platform != target_platform]
+    - pybind11                            # [build_platform != target_platform and not str(gnuradio_extra_pin).startswith("3.8")]
   host:
     - boost-cpp
     - gnuradio-core  # [not gnuradio_extra_pin]
@@ -42,11 +42,12 @@ requirements:
     - libhackrf
     - numpy
     - pip  # [win]
-    - pybind11
+    - pybind11  # [not str(gnuradio_extra_pin).startswith("3.8")]
     - python
     - rtl-sdr
     - six
     - soapysdr
+    - swig  # [str(gnuradio_extra_pin).startswith("3.8")]
     - uhd
     - volk
   run:
