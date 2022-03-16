@@ -13,7 +13,7 @@ gnuradio_core:
 gnuradio_extra_pin:
 - 3.9.5
 numpy:
-- '1.18'
+- '1.19'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -21,7 +21,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.7.* *_cpython
 soapysdr:
 - '0.8'
 target_platform:
