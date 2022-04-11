@@ -42,6 +42,7 @@ requirements:
     - gnuradio-uhd
     - libairspy
     - libairspyhf
+    - libbladerf
     - libhackrf
     - numpy
     - pip  # [win]
