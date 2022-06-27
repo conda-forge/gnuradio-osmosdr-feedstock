@@ -14,7 +14,7 @@ source:
     - 0003-Remove-use-of-removed-register-keyword.patch
 
 build:
-  number: 22
+  number: 23
   skip: true  # [(linux and not x86_64) and str(gnuradio_extra_pin).startswith("3.8")]
   skip: true  # [(osx and not x86_64) and str(gnuradio_extra_pin).startswith("3.8")]
   run_exports:
