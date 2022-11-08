@@ -15,7 +15,7 @@ source:
     - 0004-redpitaya-For-Windows-target-Vista-or-newer-for-wins.patch
 
 build:
-  number: 26
+  number: 27
   skip: true  # [(linux and not x86_64) and str(gnuradio_extra_pin).startswith("3.8")]
   skip: true  # [(osx and not x86_64) and str(gnuradio_extra_pin).startswith("3.8")]
   run_exports:
