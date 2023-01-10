@@ -8,22 +8,6 @@ jobs:
     vmImage: windows-2019
   strategy:
     matrix:
-      win_64_gnuradio_extra_pin3.8.5numpy1.20python3.8.____cpython:
-        CONFIG: win_64_gnuradio_extra_pin3.8.5numpy1.20python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pin3.8.5numpy_h7ba82dde0f
-      win_64_gnuradio_extra_pin3.8.5numpy1.20python3.9.____cpython:
-        CONFIG: win_64_gnuradio_extra_pin3.8.5numpy1.20python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pin3.8.5numpy_h2e525a543e
-      win_64_gnuradio_extra_pin3.8.5numpy1.21python3.10.____cpython:
-        CONFIG: win_64_gnuradio_extra_pin3.8.5numpy1.21python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pin3.8.5numpy_hf21f9dd33c
-      win_64_gnuradio_extra_pin3.8.5numpy1.23python3.11.____cpython:
-        CONFIG: win_64_gnuradio_extra_pin3.8.5numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pin3.8.5numpy_h68344c7230
       win_64_gnuradio_extra_pin3.9.8numpy1.20python3.8.____cpython:
         CONFIG: win_64_gnuradio_extra_pin3.9.8numpy1.20python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -56,7 +40,6 @@ jobs:
         CONFIG: win_64_gnuradio_extra_pinnumpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         SHORT_CONFIG: win_64_gnuradio_extra_pinnumpy1.23p_h8b88df08f0
-    maxParallel: 10
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\

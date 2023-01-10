@@ -8,26 +8,6 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_gnuradio_extra_pin3.8.5numpy1.20python3.8.____cpython:
-        CONFIG: linux_64_gnuradio_extra_pin3.8.5numpy1.20python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-        SHORT_CONFIG: linux_64_gnuradio_extra_pin3.8.5num_h1adf68b4c3
-      linux_64_gnuradio_extra_pin3.8.5numpy1.20python3.9.____cpython:
-        CONFIG: linux_64_gnuradio_extra_pin3.8.5numpy1.20python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-        SHORT_CONFIG: linux_64_gnuradio_extra_pin3.8.5num_hbe14f69fe4
-      linux_64_gnuradio_extra_pin3.8.5numpy1.21python3.10.____cpython:
-        CONFIG: linux_64_gnuradio_extra_pin3.8.5numpy1.21python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-        SHORT_CONFIG: linux_64_gnuradio_extra_pin3.8.5num_h11c733e3b5
-      linux_64_gnuradio_extra_pin3.8.5numpy1.23python3.11.____cpython:
-        CONFIG: linux_64_gnuradio_extra_pin3.8.5numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-        SHORT_CONFIG: linux_64_gnuradio_extra_pin3.8.5num_hd39032ade2
       linux_64_gnuradio_extra_pin3.9.8numpy1.20python3.8.____cpython:
         CONFIG: linux_64_gnuradio_extra_pin3.9.8numpy1.20python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -148,7 +128,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
         SHORT_CONFIG: linux_ppc64le_gnuradio_extra_pinnum_h6f0d395c5f
-    maxParallel: 23
   timeoutInMinutes: 360
 
   steps:
