@@ -13,7 +13,7 @@ Signed-off-by: Ryan Volz <ryan.volz@gmail.com>
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/apps/osmocom_fft b/apps/osmocom_fft
-index 10a682c..17e1fba 100755
+index c48ac7e..1b96d28 100755
 --- a/apps/osmocom_fft
 +++ b/apps/osmocom_fft
 @@ -29,6 +29,7 @@ from gnuradio.eng_option import eng_option
@@ -24,7 +24,7 @@ index 10a682c..17e1fba 100755
  import sys
  import signal
  import time
-@@ -305,7 +306,7 @@ class app_top_block(gr.top_block, Qt.QMainWindow):
+@@ -308,7 +309,7 @@ class app_top_block(gr.top_block, Qt.QMainWindow):
          except RuntimeError:
              self.freq = None
  
@@ -34,5 +34,5 @@ index 10a682c..17e1fba 100755
          self.file_sink.close() # close the sink immediately
          # lock/connect/unlock at record button event did not work, so we leave it connected at all times
 -- 
-2.35.1
+2.34.1
 
