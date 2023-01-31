@@ -35,7 +35,7 @@ soapysdr:
 target_platform:
 - linux-64
 uhd:
-- 4.3.0
+- 4.4.0
 volk:
 - '3.0'
 zip_keys:
