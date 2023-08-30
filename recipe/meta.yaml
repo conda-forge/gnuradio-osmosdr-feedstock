@@ -12,9 +12,10 @@ source:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
     - 0002-Remove-use-of-removed-register-keyword.patch
     - 0003-redpitaya-For-Windows-target-Vista-or-newer-for-wins.patch
+    - 0004-Report-correct-frequency-range-for-rtl-sdr-blog-v4-g.patch
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
