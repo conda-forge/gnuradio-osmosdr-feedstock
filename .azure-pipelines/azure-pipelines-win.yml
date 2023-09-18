@@ -8,38 +8,22 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_gnuradio_extra_pin3.9.8numpy1.22python3.10.____cpython:
-        CONFIG: win_64_gnuradio_extra_pin3.9.8numpy1.22python3.10.____cpython
+      win_64_numpy1.22python3.10.____cpython:
+        CONFIG: win_64_numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pin3.9.8numpy_hacf460269e
-      win_64_gnuradio_extra_pin3.9.8numpy1.22python3.8.____cpython:
-        CONFIG: win_64_gnuradio_extra_pin3.9.8numpy1.22python3.8.____cpython
+        SHORT_CONFIG: win_64_numpy1.22python3.10.____cpython
+      win_64_numpy1.22python3.8.____cpython:
+        CONFIG: win_64_numpy1.22python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pin3.9.8numpy_h347ff3af07
-      win_64_gnuradio_extra_pin3.9.8numpy1.22python3.9.____cpython:
-        CONFIG: win_64_gnuradio_extra_pin3.9.8numpy1.22python3.9.____cpython
+        SHORT_CONFIG: win_64_numpy1.22python3.8.____cpython
+      win_64_numpy1.22python3.9.____cpython:
+        CONFIG: win_64_numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pin3.9.8numpy_hef5a1cc8cb
-      win_64_gnuradio_extra_pin3.9.8numpy1.23python3.11.____cpython:
-        CONFIG: win_64_gnuradio_extra_pin3.9.8numpy1.23python3.11.____cpython
+        SHORT_CONFIG: win_64_numpy1.22python3.9.____cpython
+      win_64_numpy1.23python3.11.____cpython:
+        CONFIG: win_64_numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pin3.9.8numpy_h75fbe55750
-      win_64_gnuradio_extra_pinnumpy1.22python3.10.____cpython:
-        CONFIG: win_64_gnuradio_extra_pinnumpy1.22python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pinnumpy1.22p_h5fb74701cc
-      win_64_gnuradio_extra_pinnumpy1.22python3.8.____cpython:
-        CONFIG: win_64_gnuradio_extra_pinnumpy1.22python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pinnumpy1.22p_hfc9062794f
-      win_64_gnuradio_extra_pinnumpy1.22python3.9.____cpython:
-        CONFIG: win_64_gnuradio_extra_pinnumpy1.22python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pinnumpy1.22p_h8e1e94a54a
-      win_64_gnuradio_extra_pinnumpy1.23python3.11.____cpython:
-        CONFIG: win_64_gnuradio_extra_pinnumpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_gnuradio_extra_pinnumpy1.23p_h8b88df08f0
+        SHORT_CONFIG: win_64_numpy1.23python3.11.____cpython
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\
