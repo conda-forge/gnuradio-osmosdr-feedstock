@@ -15,7 +15,7 @@ source:
     - 0004-Report-correct-frequency-range-for-rtl-sdr-blog-v4-g.patch
 
 build:
-  number: 6
+  number: 7
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
@@ -34,13 +34,14 @@ requirements:
     - numpy                               # [build_platform != target_platform]
     - pybind11                            # [build_platform != target_platform]
   host:
-    - boost-cpp
+    - gmp            # [linux]
     - gnuradio-core  # [not gnuradio_extra_pin]
     - gnuradio-core {{ gnuradio_extra_pin }}.*  # [gnuradio_extra_pin]
     - gnuradio-uhd
     - libairspy
     - libairspyhf
     - libbladerf
+    - libboost-devel
     - libhackrf
     - numpy
     - pip  # [win]
@@ -52,7 +53,6 @@ requirements:
     - uhd
     - volk
   run:
-    - boost-cpp
     - {{ pin_compatible('gnuradio-uhd', max_pin='x.x.x') }}
     - python
 
