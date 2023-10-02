@@ -34,13 +34,14 @@ requirements:
     - numpy                               # [build_platform != target_platform]
     - pybind11                            # [build_platform != target_platform]
   host:
-    - libboost-devel
+    - gmp            # [linux]
     - gnuradio-core  # [not gnuradio_extra_pin]
     - gnuradio-core {{ gnuradio_extra_pin }}.*  # [gnuradio_extra_pin]
     - gnuradio-uhd
     - libairspy
     - libairspyhf
     - libbladerf
+    - libboost-devel
     - libhackrf
     - numpy
     - pip  # [win]
