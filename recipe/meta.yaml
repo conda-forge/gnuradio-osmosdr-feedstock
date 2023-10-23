@@ -43,6 +43,7 @@ requirements:
     - libbladerf
     - libboost-devel
     - libhackrf
+    - libmirisdr
     - numpy
     - pip  # [win]
     - pybind11
