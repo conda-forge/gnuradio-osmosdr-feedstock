@@ -9,7 +9,6 @@ cd build
 # FCD needs gr-funcube
 # FREESRP needs libfreesrp
 # IQBALANCE needs gr-iqbalance
-# MIRI needs libmirsdr
 # XTRX needs libxtrx
 cmake_config_args=(
     -DCMAKE_BUILD_TYPE=Release
@@ -26,7 +25,7 @@ cmake_config_args=(
     -DENABLE_FREESRP=OFF
     -DENABLE_HACKRF=ON
     -DENABLE_IQBALANCE=OFF
-    -DENABLE_MIRI=OFF
+    -DENABLE_MIRI=ON
     -DENABLE_NONFREE=OFF
     -DENABLE_PYTHON=ON
     -DENABLE_REDPITAYA=ON
