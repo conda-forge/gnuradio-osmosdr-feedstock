@@ -10,12 +10,14 @@ source:
   sha256: 28b6f2768aee7b397b227e9e70822e28de3b4c5362a5d14646a0948a48094a63
   patches:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
-    - 0002-Remove-use-of-removed-register-keyword.patch
-    - 0003-redpitaya-For-Windows-target-Vista-or-newer-for-wins.patch
-    - 0004-Report-correct-frequency-range-for-rtl-sdr-blog-v4-g.patch
+    - 0002-redpitaya-For-Windows-target-Vista-or-newer-for-wins.patch
+    - 0003-Avoid-namespace-conflicts.patch
+    - 0004-hackf-remove-deprecated-register-keyword-make-c-17-h.patch
+    - 0005-fix-gain-mode-caching.patch
+    - 0006-rtlsdr-detect-RTL-SDR-Blog-V4-set-lower-tuning-limit.patch
 
 build:
-  number: 9
+  number: 10
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 

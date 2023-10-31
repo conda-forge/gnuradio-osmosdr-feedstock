@@ -1,0 +1,45 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Carl Laufer <admin@rtl-sdr.com>
+Date: Sun, 29 Oct 2023 17:15:34 +0100
+Subject: [PATCH] rtlsdr: detect RTL-SDR Blog V4, set lower tuning limit to
+ 0Mhz
+
+Signed-off-by: Eric Wild <ewild@sysmocom.de>
+---
+ lib/rtl/rtl_source_c.cc | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/lib/rtl/rtl_source_c.cc b/lib/rtl/rtl_source_c.cc
+index 5e3306b..644bf7a 100644
+--- a/lib/rtl/rtl_source_c.cc
++++ b/lib/rtl/rtl_source_c.cc
+@@ -455,6 +455,8 @@ double rtl_source_c::get_sample_rate()
+ osmosdr::freq_range_t rtl_source_c::get_freq_range( size_t chan )
+ {
+   osmosdr::freq_range_t range;
++  char manufact[256];
++  char product[256];
+ 
+   if (_dev) {
+     if (_no_tuner) {
+@@ -464,6 +466,8 @@ osmosdr::freq_range_t rtl_source_c::get_freq_range( size_t chan )
+       return range;
+     }
+ 
++    rtlsdr_get_usb_strings( _dev, manufact, product, NULL );
++
+     enum rtlsdr_tuner tuner = rtlsdr_get_tuner_type(_dev);
+ 
+     if ( tuner == RTLSDR_TUNER_E4000 ) {
+@@ -478,6 +482,8 @@ osmosdr::freq_range_t rtl_source_c::get_freq_range( size_t chan )
+       range += osmosdr::range_t( 438e6, 924e6 );
+     } else if ( tuner == RTLSDR_TUNER_R820T ) {
+       range += osmosdr::range_t( 24e6, 1766e6 );
++    } else if ( tuner == RTLSDR_TUNER_R828D && strcmp(manufact, "RTLSDRBlog") == 0 && strcmp(product, "Blog V4") == 0 ) {
++      range += osmosdr::range_t( 0e6, 1766e6 );
+     } else if ( tuner == RTLSDR_TUNER_R828D ) {
+       range += osmosdr::range_t( 24e6, 1766e6 );
+     }
+-- 
+2.40.0
+

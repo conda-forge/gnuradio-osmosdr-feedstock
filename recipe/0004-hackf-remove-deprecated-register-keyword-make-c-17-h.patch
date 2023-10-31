@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Eric Wild <ewild@sysmocom.de>
+Date: Sun, 29 Oct 2023 16:24:23 +0100
+Subject: [PATCH] hackf: remove deprecated register keyword, make c++17 happy
+
+This fixes https://osmocom.org/issues/6004
+---
+ lib/hackrf/hackrf_sink_c.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/hackrf/hackrf_sink_c.cc b/lib/hackrf/hackrf_sink_c.cc
+index 1762934..54ff3ef 100644
+--- a/lib/hackrf/hackrf_sink_c.cc
++++ b/lib/hackrf/hackrf_sink_c.cc
+@@ -299,7 +299,7 @@ void convert_avx(const float* inbuf, int8_t* outbuf,const unsigned int count)
+ #elif USE_SSE2
+ void convert_sse2(const float* inbuf, int8_t* outbuf,const unsigned int count)
+ {
+-  const register __m128 mulme = _mm_set_ps( 127.0f, 127.0f, 127.0f, 127.0f );
++  const __m128 mulme = _mm_set_ps( 127.0f, 127.0f, 127.0f, 127.0f );
+   __m128 itmp1,itmp2,itmp3,itmp4;
+   __m128i otmp1,otmp2,otmp3,otmp4;
+ 
+-- 
+2.40.0
+
