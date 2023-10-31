@@ -1,0 +1,43 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Eric Wild <ewild@sysmocom.de>
+Date: Sun, 29 Oct 2023 16:50:05 +0100
+Subject: [PATCH] fix gain mode caching
+
+As pointed out in https://osmocom.org/issues/5562 and previously
+discussed in https://github.com/gqrx-sdr/gqrx/issues/979 the current
+cache fails to set 0, because the first map lookup of the key that does
+not exist (and is created by accessing it using operator[]) returns 0.
+---
+ lib/sink_impl.cc   | 2 +-
+ lib/source_impl.cc | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lib/sink_impl.cc b/lib/sink_impl.cc
+index a7a0487..d38bd01 100644
+--- a/lib/sink_impl.cc
++++ b/lib/sink_impl.cc
+@@ -410,7 +410,7 @@ bool sink_impl::set_gain_mode( bool automatic, size_t chan )
+   for (sink_iface *dev : _devs)
+     for (size_t dev_chan = 0; dev_chan < dev->get_num_channels(); dev_chan++)
+       if ( chan == channel++ ) {
+-        if ( _gain_mode[ chan ] != automatic ) {
++        if ( (_gain_mode.count(chan) == 0) || (_gain_mode[ chan ] != automatic) ) {
+           _gain_mode[ chan ] = automatic;
+           bool mode = dev->set_gain_mode( automatic, dev_chan );
+           if (!automatic) // reapply gain value when switched to manual mode
+diff --git a/lib/source_impl.cc b/lib/source_impl.cc
+index 392255f..c03c43d 100644
+--- a/lib/source_impl.cc
++++ b/lib/source_impl.cc
+@@ -617,7 +617,7 @@ bool source_impl::set_gain_mode( bool automatic, size_t chan )
+   for (source_iface *dev : _devs)
+     for (size_t dev_chan = 0; dev_chan < dev->get_num_channels(); dev_chan++)
+       if ( chan == channel++ ) {
+-        if ( _gain_mode[ chan ] != automatic ) {
++        if ( (_gain_mode.count(chan) == 0) || (_gain_mode[ chan ] != automatic) ) {
+           _gain_mode[ chan ] = automatic;
+           bool mode = dev->set_gain_mode( automatic, dev_chan );
+           if (!automatic) // reapply gain value when switched to manual mode
+-- 
+2.40.0
+
