@@ -47,6 +47,8 @@ requirements:
     - libboost-devel
     - libhackrf
     - libmirisdr
+    # needed for gnuradio-iqbalance
+    - libosmo-dsp
     - numpy
     - pip  # [win]
     - pybind11
