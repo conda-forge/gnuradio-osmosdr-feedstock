@@ -33,7 +33,7 @@ soapysdr:
 target_platform:
 - osx-arm64
 uhd:
-- 4.5.0
+- 4.6.0
 volk:
 - '3.0'
 zip_keys:
