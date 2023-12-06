@@ -6,9 +6,7 @@ mkdir build
 cd build
 
 # enable components explicitly so we get build error when unsatisfied
-# FCD needs gr-funcube
 # FREESRP needs libfreesrp
-# IQBALANCE needs gr-iqbalance
 # XTRX needs libxtrx
 cmake_config_args=(
     -DCMAKE_BUILD_TYPE=Release
@@ -20,7 +18,6 @@ cmake_config_args=(
     -DENABLE_AIRSPYHF=ON
     -DENABLE_BLADERF=ON
     -DENABLE_DOXYGEN=OFF
-    -DENABLE_FCD=OFF
     -DENABLE_FILE=ON
     -DENABLE_FREESRP=OFF
     -DENABLE_HACKRF=ON
@@ -36,6 +33,16 @@ cmake_config_args=(
     -DENABLE_UHD=ON
     -DENABLE_XTRX=OFF
 )
+
+if [[ $target_platform == linux* ]] ; then
+    cmake_config_args+=(
+        -DENABLE_FCD=ON
+    )
+else
+    cmake_config_args+=(
+        -DENABLE_FCD=OFF
+    )
+fi
 
 cmake ${CMAKE_ARGS} .. "${cmake_config_args[@]}"
 cmake --build . --config Release -- -j${CPU_COUNT}

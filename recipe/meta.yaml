@@ -17,7 +17,7 @@ source:
     - 0006-rtlsdr-detect-RTL-SDR-Blog-V4-set-lower-tuning-limit.patch
 
 build:
-  number: 12
+  number: 13
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
@@ -39,6 +39,7 @@ requirements:
     - gmp            # [linux]
     - gnuradio-core  # [not gnuradio_extra_pin]
     - gnuradio-core {{ gnuradio_extra_pin }}.*  # [gnuradio_extra_pin]
+    - gnuradio-funcube  # [linux]
     - gnuradio-iqbalance
     - gnuradio-uhd
     - libairspy
