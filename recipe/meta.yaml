@@ -17,7 +17,7 @@ source:
     - 0006-rtlsdr-detect-RTL-SDR-Blog-V4-set-lower-tuning-limit.patch
 
 build:
-  number: 16
+  number: 17
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
