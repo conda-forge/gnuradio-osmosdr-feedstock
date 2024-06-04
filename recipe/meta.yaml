@@ -1,23 +1,19 @@
 {% set name = "gnuradio-osmosdr" %}
-{% set version = "0.2.4" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/osmocom/gr-osmosdr/archive/v{{ version }}.tar.gz
-  sha256: 28b6f2768aee7b397b227e9e70822e28de3b4c5362a5d14646a0948a48094a63
+  url: https://gitea.osmocom.org/sdr/gr-osmosdr/archive/v{{ version }}.tar.gz
+  sha256: 8995313795fe7f6fad8f59072067cbfd4dcdb3fa40c5374bdac2c2fb82ce8ab6
   patches:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
     - 0002-redpitaya-For-Windows-target-Vista-or-newer-for-wins.patch
-    - 0003-Avoid-namespace-conflicts.patch
-    - 0004-hackf-remove-deprecated-register-keyword-make-c-17-h.patch
-    - 0005-fix-gain-mode-caching.patch
-    - 0006-rtlsdr-detect-RTL-SDR-Blog-V4-set-lower-tuning-limit.patch
 
 build:
-  number: 17
+  number: 0
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 

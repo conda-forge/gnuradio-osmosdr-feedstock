@@ -34,5 +34,5 @@ index c48ac7e..1b96d28 100755
          self.file_sink.close() # close the sink immediately
          # lock/connect/unlock at record button event did not work, so we leave it connected at all times
 -- 
-2.40.0
+2.45.1
 
