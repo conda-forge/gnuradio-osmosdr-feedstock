@@ -27,17 +27,17 @@ gnuradio_extra_pin:
 libboost_devel:
 - '1.84'
 numpy:
-- '1.22'
+- '2.0'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.10.* *_cpython
+- 3.11.* *_cpython
 soapysdr:
 - '0.8'
 target_platform:
-- linux-64
+- linux-ppc64le
 uhd:
 - 4.7.0
 volk:
