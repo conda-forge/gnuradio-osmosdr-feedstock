@@ -6,14 +6,16 @@ package:
   version: {{ version }}
 
 source:
-  url: https://gitea.osmocom.org/sdr/gr-osmosdr/archive/v{{ version }}.tar.gz
-  sha256: 8995313795fe7f6fad8f59072067cbfd4dcdb3fa40c5374bdac2c2fb82ce8ab6
+  #url: https://gitea.osmocom.org/sdr/gr-osmosdr/archive/v{{ version }}.tar.gz
+  #sha256: 8995313795fe7f6fad8f59072067cbfd4dcdb3fa40c5374bdac2c2fb82ce8ab6
+  url: https://github.com/osmocom/gr-osmosdr/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: c50514d42be5a56a5b6b26fc12a8539ea9a433c28a3b96506084bd646879f91f
   patches:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
     - 0002-redpitaya-For-Windows-target-Vista-or-newer-for-wins.patch
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
