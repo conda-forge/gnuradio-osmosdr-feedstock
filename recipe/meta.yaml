@@ -15,7 +15,7 @@ source:
     - 0002-redpitaya-For-Windows-target-Vista-or-newer-for-wins.patch
 
 build:
-  number: 5
+  number: 6
   run_exports:
     - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}
 
