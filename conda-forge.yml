@@ -2,6 +2,9 @@ azure:
   store_build_artifacts: true
 bot:
   automerge: true
+  version_updates:
+    exclude:
+      - '3.8'
 build_platform:
   linux_aarch64: linux_64
   linux_ppc64le: linux_64
