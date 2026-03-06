@@ -29,4 +29,4 @@ target_platform:
 uhd:
 - 4.9.0
 volk:
-- '3.2'
+- '3.3'
