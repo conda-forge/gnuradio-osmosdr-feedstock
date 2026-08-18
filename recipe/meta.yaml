@@ -13,6 +13,7 @@ source:
   patches:
     - 0001-apps-Fix-osmocom_fft-on-Windows-where-dev-null-doesn.patch
     - 0002-redpitaya-For-Windows-target-Vista-or-newer-for-wins.patch
+    - 0003-cmake-Remove-requirement-for-boost-system-for-boost-.patch
 
 build:
   number: 14
